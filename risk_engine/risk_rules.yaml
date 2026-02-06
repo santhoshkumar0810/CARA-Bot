@@ -1,0 +1,42 @@
+# Risk Detection Rules for Indian SMEs
+
+Termination:
+  - id: TERM_UNILATERAL
+    condition: "unilateral"
+    severity: "High"
+    reason: "Unilateral termination rights without cause are risky for SMEs."
+  - id: TERM_NOTICE_SHORT
+    keyword: "7 days"
+    severity: "Medium"
+    reason: "Notice period of less than 30 days provides insufficient transition time."
+
+Indemnity:
+  - id: INDEM_UNLIMITED
+    condition: "no_cap"
+    severity: "High"
+    reason: "Unlimited indemnity exposes the company to potentially bankrupting claims."
+  - id: INDEM_BROAD
+    keyword: "all claims"
+    severity: "Medium"
+    reason: "Broad indemnity for 'all claims' including 3rd party is aggressive."
+
+Liability:
+  - id: LIAB_UNLIMITED
+    keyword: "unlimited liability"
+    severity: "Critical"
+    reason: "Never accept unlimited liability. Demand a cap tied to contract value."
+  - id: LIAB_INDIRECT
+    keyword: "consequential damages"
+    severity: "High"
+    reason: "Liability for indirect/consequential damages should be excluded."
+
+Jurisdiction:
+  - id: JURIS_FOREIGN
+    keyword: "laws of"
+    negative_keyword: "India"
+    severity: "High"
+    reason: "Foreign jurisdiction (non-Indian law) increases legal costs significantly."
+  - id: ARBITRATION_COSTLY
+    keyword: "international arbitration"
+    severity: "Medium"
+    reason: "International arbitration (e.g. Singapore/London) is very expensive."
