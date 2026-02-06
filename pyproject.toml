@@ -1,0 +1,21 @@
+[project]
+name = "cara-bot"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "pypdf",
+    "pdfplumber",
+    "python-docx",
+    "langdetect",
+    "spacy",
+    "sentence-transformers",
+    "numpy",
+    "PyYAML",
+    "streamlit",
+    "reportlab",
+    "openai",
+    "python-dotenv",
+    "groq>=1.0.0",
+]
